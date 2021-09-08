@@ -1,0 +1,226 @@
+$sidebarColor: #b994ff;
+$activeFontColor: #b994ff;
+$backgroundColor: #f9f9f9;
+$mainFont: "Open Sans", sans-serif;
+$fontColor: darkgray;
+$titleColor: slategray;
+$recentColor: #0e2c4b;
+
+$blue: #a5daf8;
+$purple: #d3cbff;
+$green: #a9edd9;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $backgroundColor;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+  // Sidebar
+  .sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: $sidebarColor;
+    width: 80px;
+    height: 95vh;
+    padding: 0 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        color: white;
+        font-size: 1.5rem;
+        list-style-type: none;
+        margin: 3rem 0;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+      li:hover {
+        cursor: pointer;
+      }
+      #active {
+        background-color: white;
+        color: $activeFontColor;
+        padding: 10px;
+        border-radius: 1rem;
+      }
+      #logo {
+        font-size: 3rem;
+        position: absolute;
+        top: 10px;
+      }
+      #logout-btn {
+        position: absolute;
+        bottom: 40px;
+        left: 2.5rem;
+      }
+    }
+  }
+  // Top Search +
+  .search {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    #search__icon {
+      padding: 20px;
+      margin: 5px 20px 5px 0;
+      border-radius: 0.5rem;
+      background-color: white;
+      box-shadow: 0 2px 5px 0px #ccc;
+      color: #b994ff;
+      font-size: 1.25rem;
+    }
+    .search__bar {
+      width: 40%;
+      background-color: transparent;
+      margin: 0 50px 0 0;
+      input {
+        outline: none;
+        background-color: transparent;
+        width: 90%;
+        height: 30px;
+        padding: 15px 0;
+        border: none;
+        border-bottom: 1px solid rgba(204, 204, 204, 0.76);
+      }
+      input::placeholder {
+        font-size: 1.25rem;
+        font-family: $mainFont;
+        font-weight: 400;
+        color: $fontColor;
+      }
+    }
+    #date {
+      font-family: $mainFont;
+      font-size: 1.15rem;
+      color: $fontColor;
+      margin: 0 20% 0 0;
+    }
+    ul {
+      display: flex;
+      margin: 0 0 0 0;
+      padding: 0;
+      li {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        margin: 0 15px;
+        font-size: 1.5rem;
+        color: $fontColor;
+        position: relative;
+        #alert {
+          position: absolute;
+          top: 12px;
+          right: 2px;
+          background-color: red;
+          border-radius: 50%;
+          width: 0.45rem;
+          height: 0.45rem;
+          border: 1px solid white;
+        }
+      }
+      #profile {
+        display: flex;
+        font-family: $mainFont;
+        font-size: 1rem;
+        margin: 0 0 0 50px;
+      }
+      #pfp {
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+        border: 1px solid #ccc;
+        background-image: url("../assets/pfp.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      #username {
+        margin: 0 25px 0 0;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+      }
+    }
+  }
+  // My Books
+  .books {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 55%;
+    border: 1px solid red;
+    .book__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: $mainFont;
+      h1 {
+        border: 1px solid red;
+        font-weight: 600;
+        color: $titleColor;
+      }
+      .more {
+        display: flex;
+        align-items: center;
+        font-size: 1.15rem;
+        color: $titleColor;
+      }
+    }
+    // Recent Books
+    .recent__container {
+      .recent__book {
+        width: 35%;
+        height: 250px;
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-items: center;
+        align-content: center;
+        background-color: $blue;
+        border-radius: 1rem;
+        .recent__img {
+          background-image: url("/assets/books/1.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          margin: 0.5rem;
+          width: 125px;
+          height: 200px;
+          border-radius: 1rem;
+        }
+        .recent__info {
+          width: 225px;
+          font-family: $mainFont;
+          color: gray;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-wrap: wrap;
+          border: 1px solid red;
+          h3 {
+            font-size: 1.5rem;
+            color: $recentColor;
+          }
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
